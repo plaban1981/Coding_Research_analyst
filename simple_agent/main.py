@@ -3,17 +3,23 @@ from mcp.client.stdio import stdio_client
 from langchain_mcp_adapters.tools import load_mcp_tools
 from langgraph.prebuilt import create_react_agent
 from langchain_groq import ChatGroq
+from langchain_openai import ChatOpenAI
 from dotenv import load_dotenv
 import asyncio
 import os
 
 load_dotenv()
-
-model = ChatGroq(
-    model="llama-3.3-70b-versatile",
+# model = ChatGroq(
+#     model="llama-3.3-70b-versatile",
+#     temperature=0,
+#     max_tokens=10000,
+#     groq_api_key=os.getenv("GROQ_API_KEY")
+# )
+model = ChatOpenAI(
+    model="gpt-4o-mini",
     temperature=0,
     max_tokens=10000,
-    groq_api_key=os.getenv("GROQ_API_KEY")
+    openai_api_key=os.getenv("API_KEY")
 )
 
 server_params = StdioServerParameters(
@@ -63,10 +69,24 @@ async def main():
                 messages.append({"role": "user", "content": user_input})
                 
                 try:
+                    print("🔄 Processing query...")
                     agent_response = await agent.ainvoke({"messages": messages})
+
+                    # Check if any tools were used
+                    tool_used = False
+                    for msg in agent_response.get("messages", []):
+                        if hasattr(msg, 'tool_calls') and msg.tool_calls:
+                            for tool_call in msg.tool_calls:
+                                tool_name = tool_call.get('name', 'Unknown')
+                                print(f"🔧 Using Firecrawl tool: {tool_name}")
+                                tool_used = True
+                    
+                    if not tool_used:
+                        print("📝 No Firecrawl tools used in this response")
 
                     ai_message = agent_response["messages"][-1].content
                     print("\n🤖 Agent:", ai_message)    
+                    
                 except Exception as e:
                     print("❌ Error:", e)
                     # Remove the last user message if it caused an error
