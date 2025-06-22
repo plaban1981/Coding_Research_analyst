@@ -76,3 +76,55 @@ Both platforms are designed to enhance AI-driven automation and agent-based work
 👤 You:
 ```
 
+## Response GPT-4O-mini
+
+
+```
+🛠️ Available Tools - firecrawl_scrape firecrawl_map firecrawl_crawl firecrawl_check_crawl_status firecrawl_search firecrawl_extract firecrawl_deep_research firecrawl_generate_llmstxt
+------------------------------------------------------------
+
+👤 You: suggest me the best framework to develop a coding agent
+🔄 Processing query...
+📝 No Firecrawl tools used in this response
+
+🤖 Agent: To develop a coding agent, here are some of the best frameworks you can consider:
+
+1. **OpenAI Codex**: This is a powerful AI model that can understand and generate code. It's great for building coding assistants and can be integrated into various applications.
+
+2. **TensorFlow**: A popular open-source library for machine learning. It can be used to build custom models for coding agents, especially if you want to train your own models.
+
+3. **PyTorch**: Another open-source machine learning library that is user-friendly and flexible. It's great for research and development of AI models.
+
+4. **Rasa**: An open-source framework for building conversational AI. It can be used to create chatbots that assist with coding tasks.
+
+5. **Microsoft Bot Framework**: This framework allows you to build and connect intelligent bots that can interact with users across various platforms.
+
+6. **Hugging Face Transformers**: A library that provides pre-trained models for natural language processing tasks, including code generation and understanding.
+
+7. **LangChain**: A framework designed for developing applications powered by language models, which can be useful for creating coding agents that understand and generate code.
+
+Choose the one that best fits your needs based on the complexity of the coding tasks you want the agent to handle! 🚀✨
+
+👤 You: best agentic ai frameworks available to develop a complex project management agentic application
+🔄 Processing query...
+🔧 Using Firecrawl tool: firecrawl_search
+
+🤖 Agent: Here are some of the best frameworks for developing agentic AI applications, especially for complex project management systems:
+
+1. **Microsoft AutoGen**: Great for orchestrating multi-agent systems, allowing for seamless integration and management of various AI agents. 🤖
+
+2. **LangChain**: This framework is designed for building applications powered by language models, making it ideal for creating intelligent workflows. 📚
+
+3. **LangGraph**: Focuses on advanced state management and supports the implementation of agent loops, which can be beneficial for complex applications. 🔄
+
+4. **CrewAI**: A versatile framework that supports collaborative AI agents, making it suitable for project management tasks. 👥
+
+5. **LlamaIndex**: Useful for managing and indexing data, which can enhance the efficiency of your project management application. 📊
+
+6. **Semantic Kernel**: This framework allows for the integration of semantic understanding into your AI agents, improving their decision-making capabilities. 🌐
+
+These frameworks provide a solid foundation for building sophisticated agentic applications! 🚀✨
+
+👤 You: bye
+👋 Goodbye! Have a great day! ✨
+```
